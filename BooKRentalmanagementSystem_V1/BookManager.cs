@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BooKRentalmanagementSystem_V1
 {
-    internal class BookManager:Book
+    internal class BookManager
     {
         public List<Book> books = new List<Book>();
         public void CreateBook(Book book)
@@ -32,7 +32,7 @@ namespace BooKRentalmanagementSystem_V1
         }
         public void UpdateBook(string bookid, string newtitle,string newauthor,decimal newRentalprice)
         {
-            var data = books.Find(b => b.BookId ==bookid);
+            var data = books.Find(b => b.Bookid ==bookid);
             if (data != null)
             {
                 data.Title = newtitle;
@@ -46,6 +46,18 @@ namespace BooKRentalmanagementSystem_V1
             }
 
 
+        }
+        public void DeleteBook(string bookid)
+        {
+            var book= books.Find(b=>b.Bookid ==bookid);
+            if (book != null)
+            {
+                books.Remove(book);
+            }
+            else
+            {
+                Console.WriteLine("can't find book");
+            }
         }
 
     }
