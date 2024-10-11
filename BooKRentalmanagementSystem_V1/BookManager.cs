@@ -68,6 +68,8 @@ namespace BooKRentalmanagementSystem_V1
             if (book.RentalPrice <= 0)
             {
                 Console.WriteLine("RentalPrice must be positive");
+                Console.WriteLine("Enter Vaide RenterPrice ");
+                decimal price = decimal.Parse(Console.ReadLine());
                 return;
             }
         }
