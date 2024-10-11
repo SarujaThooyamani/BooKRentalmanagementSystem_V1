@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace BooKRentalmanagementSystem_V1
 {
-    internal class EBook:Book
+    internal class EBook : Book
     {
         public double Filesize;
         public string Format;
 
-        public EBook(string bookid, string title, string author, decimal rentalPrice , double filesize,string format) : base(bookid, title, author, rentalPrice)
+        public EBook(string bookid, string title, string author, decimal rentalPrice, double filesize, string format) : base(bookid, title, author, rentalPrice)
         {
             this.Format = format;
             this.Filesize = filesize;
         }
+        public override string DisplayPrintedBookInfo()
+        {
+            return $"{base.ToString()},FileSize : {Filesize},Format :{Format}";
+        }
     }
 }
+

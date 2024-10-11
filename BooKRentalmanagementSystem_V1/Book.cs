@@ -12,6 +12,7 @@ namespace BooKRentalmanagementSystem_V1
         public string Title;
         public string Author;
         public decimal RentalPrice;
+        public static int TotalBooks = 0;
 
         public Book(string bookid, string title, string author, decimal rentalPrice)
         {
@@ -19,12 +20,22 @@ namespace BooKRentalmanagementSystem_V1
             Title = title;
             Author = author;
             RentalPrice = rentalPrice;
+            TotalBooks++;
         }
 
         public override string ToString()
         {
-            return $"Bookid: {Bookid},Title: {Title},Author:{Author},RentalPrice:{RentalPrice}";
+            return $"Bookid: {Bookid},Title: {Title},Author:{Author},RentalPrice:{RentalPrice},{TotalBooks}";
         }
-       
+        public override string DisplayPrintedBookInfo()
+        {
+            return ToString() ;
+        }
+        public virtual string DisplayBookInfo()
+        {
+            return ToString();
+        }
+
+
     }
 }

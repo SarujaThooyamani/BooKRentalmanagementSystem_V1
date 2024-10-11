@@ -12,14 +12,14 @@ namespace BooKRentalmanagementSystem_V1
         public List<Book> books = new List<Book>();
         public void CreateBook(Book book)
         {
-           
-             books.Add(book);
+
+            books.Add(book);
             Console.WriteLine("Book added Successfully");
         }
 
         public void ReadBooks()
         {
-            
+
             if (books.Count != 0)
             {
                 foreach (Book book in books)
@@ -32,10 +32,10 @@ namespace BooKRentalmanagementSystem_V1
                 Console.WriteLine("no books to show");
             }
         }
-        public void UpdateBook(string bookid, string newtitle,string newauthor,decimal newRentalprice)
+        public void UpdateBook(string bookid, string newtitle, string newauthor, decimal newRentalprice)
         {
-            
-            var data = books.Find(b => b.Bookid ==bookid);
+
+            var data = books.Find(b => b.Bookid == bookid);
             if (data != null)
             {
                 data.Title = newtitle;
@@ -52,8 +52,8 @@ namespace BooKRentalmanagementSystem_V1
         }
         public void DeleteBook(string bookid)
         {
-           
-            var book= books.Find(b=>b.Bookid ==bookid);
+
+            var book = books.Find(b => b.Bookid == bookid);
             if (book != null)
             {
                 books.Remove(book);
@@ -65,4 +65,5 @@ namespace BooKRentalmanagementSystem_V1
         }
 
     }
-} 
+}
+
