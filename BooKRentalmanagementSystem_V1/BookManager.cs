@@ -12,7 +12,7 @@ namespace BooKRentalmanagementSystem_V1
         public List<Book> books = new List<Book>();
         public void CreateBook(Book book)
         {
-
+            ValidateBookRentalPrice(book);
             books.Add(book);
             Console.WriteLine("Book added Successfully");
         }
@@ -61,6 +61,14 @@ namespace BooKRentalmanagementSystem_V1
             else
             {
                 Console.WriteLine("can't find book");
+            }
+        }
+        public void ValidateBookRentalPrice(Book  book)
+        {
+            if (book.RentalPrice <= 0)
+            {
+                Console.WriteLine("RentalPrice must be positive");
+                return;
             }
         }
 
