@@ -12,12 +12,14 @@ namespace BooKRentalmanagementSystem_V1
         public List<Book> books = new List<Book>();
         public void CreateBook(Book book)
         {
+           
              books.Add(book);
             Console.WriteLine("Book added Successfully");
         }
 
         public void ReadBooks()
         {
+            
             if (books.Count != 0)
             {
                 foreach (Book book in books)
@@ -32,6 +34,7 @@ namespace BooKRentalmanagementSystem_V1
         }
         public void UpdateBook(string bookid, string newtitle,string newauthor,decimal newRentalprice)
         {
+            
             var data = books.Find(b => b.Bookid ==bookid);
             if (data != null)
             {
@@ -49,6 +52,7 @@ namespace BooKRentalmanagementSystem_V1
         }
         public void DeleteBook(string bookid)
         {
+           
             var book= books.Find(b=>b.Bookid ==bookid);
             if (book != null)
             {

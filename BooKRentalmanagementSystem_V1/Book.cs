@@ -25,6 +25,6 @@ namespace BooKRentalmanagementSystem_V1
         {
             return $"Bookid: {Bookid},Title: {Title},Author:{Author},RentalPrice:{RentalPrice}";
         }
-        public Book book1 = new Book();
+       
     }
 }
